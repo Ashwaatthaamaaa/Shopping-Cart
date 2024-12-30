@@ -1,4 +1,3 @@
-import Navbar from "../../components/Navbar/navbar.jsx";
 import styles from "./home.module.css";
 export default function Home(){
     return(

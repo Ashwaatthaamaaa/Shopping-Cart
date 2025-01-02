@@ -1,0 +1,38 @@
+
+
+
+
+.card{
+    width: 22rem;
+    margin: 2.5rem;
+    border: .1rem solid #ccc;
+    border-radius: .3rem;
+    padding: .3rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+
+}
+
+.wish,.cart{
+    font-size: 1.8rem;
+    margin-left: auto;
+}
+
+#brand{
+    color: rgb(80 73 73 / 68%);
+}
+
+.cart{
+    margin-left: auto;
+    margin-top: auto;
+    width: fit-content;
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+
+}

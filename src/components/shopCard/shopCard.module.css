@@ -29,6 +29,15 @@
     color: rgb(80 73 73 / 68%);
 }
 
+.cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
 .total{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-left:6rem ;
 }

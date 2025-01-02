@@ -38,17 +38,18 @@ function App() {
       };
 
 
-
+      const wishlistCount = wishBag.length;
+      const shopbagCount = shopBag.length;
 
     return(
         <>
         <Router>
 
-        <Navbar/>
+        <Navbar wishlistCount={wishlistCount} shopbagCount={shopbagCount}/>
 
         <Routes>
 
-          <Route path='/' element={<Home/>} />
+          <Route path='/' element={<Home />} />
           <Route path='/shop' element={<Shop products={products} loading={loading} error={error} quantities={quantities} updateQuantity={updateQuantity} updateWishlist={updateWishlist} removeFromWishlist={removeFromWishlist} wishlist={wishlist} /> } />  
           <Route path='/wishlist' element={<Wishlist wishBag={wishBag} updateWishlist={updateWishlist} removeFromWishlist={removeFromWishlist} quantities={quantities} updateQuantity={updateQuantity} wishlist={wishlist} />}/>   
           <Route path='/checkout' element={<Checkout shopbag={shopBag}  quantities={quantities} updateQuantity={updateQuantity} /> } />

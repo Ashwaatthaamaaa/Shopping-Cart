@@ -12,7 +12,7 @@ export default function ShopCard({ product, quantity, updateQuantity }) {
         const [isDisabled, setIsdisabled] = useState(true);
     
     
-
+        let price = product.price*quantity;
 
     return(
         <div className={styles.card}>
@@ -34,6 +34,7 @@ export default function ShopCard({ product, quantity, updateQuantity }) {
                             updateQuantity(product.id,value);
                             setIsdisabled(value > 0 ? false : true);
                         }}
+                    
                     >
                         <NumberInputField />
                         <NumberInputStepper>
@@ -42,8 +43,8 @@ export default function ShopCard({ product, quantity, updateQuantity }) {
                         </NumberInputStepper>
                     </NumberInput>
                 </div>
+                <div className={styles.total}>$ {price}</div>
             </div>
-            <div className={styles.total}>$70</div>
         </div>
 
     )

@@ -3,11 +3,10 @@ import './App.css'
 import Home from './pages/Home/home'
 import Navbar from './components/Navbar/navbar'
 import Shop from './pages/shopping/shop'
-import ShopCard from './components/shopCard/shopCard'
 import Checkout from './pages/checkout/checkout'
 import usefetch from './fetchHook';
-
-import Wishlist from './pages/wishlist/wishlist'
+import Wishlist from './pages/wishlist/wishlist';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 
 
 function App() {
@@ -41,13 +40,25 @@ function App() {
 
 
 
-    console.log(wishBag);
     return(
         <>
+        <Router>
+
         <Navbar/>
-        <Shop products={products} loading={loading} error={error} quantities={quantities} updateQuantity={updateQuantity} updateWishlist={updateWishlist} removeFromWishlist={removeFromWishlist} wishlist={wishlist} />
-        {/* <Checkout shopbag={shopBag}  quantities={quantities} updateQuantity={updateQuantity}   />       */}
-        <Wishlist wishBag={wishBag} updateWishlist={updateWishlist} removeFromWishlist={removeFromWishlist} quantities={quantities} updateQuantity={updateQuantity} wishlist={wishlist} />
+
+        <Routes>
+
+          <Route path='/' element={<Home/>} />
+          <Route path='/shop' element={<Shop products={products} loading={loading} error={error} quantities={quantities} updateQuantity={updateQuantity} updateWishlist={updateWishlist} removeFromWishlist={removeFromWishlist} wishlist={wishlist} /> } />  
+          <Route path='/wishlist' element={<Wishlist wishBag={wishBag} updateWishlist={updateWishlist} removeFromWishlist={removeFromWishlist} quantities={quantities} updateQuantity={updateQuantity} wishlist={wishlist} />}/>   
+          <Route path='/checkout' element={<Checkout shopbag={shopBag}  quantities={quantities} updateQuantity={updateQuantity} /> } />
+
+
+
+        </Routes>
+
+
+        </Router>
         </>
     )
 }

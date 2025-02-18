@@ -1,6 +1,11 @@
 import ShopCard from "../../components/shopCard/shopCard"
 import styles from "./checkout.module.css"
 export default function Checkout({shopbag,quantities, updateQuantity}) {
+
+
+    const subtotal = shopbag.reduce((acc, product) => acc + product.price * quantities[product.id], 0);
+    const deliveryfee = 0;
+    const total = subtotal + deliveryfee;
    return(
     <div className={styles.container}>
         <div className={styles.cards}>
@@ -22,16 +27,16 @@ export default function Checkout({shopbag,quantities, updateQuantity}) {
                 <h2>Order Summary</h2>
                 <div className={styles.subtotal}>
                     <p>subtotal</p>
-                    <p>$0</p>
+                    <p>$ {subtotal}</p>
                 </div>
                 <div className={styles.subtotal}>
                     <p>Delivery Fee</p>
-                    <p>$ 0</p>
+                    <p>$ {deliveryfee}</p>
                 </div>
                 <hr />
                 <div className={styles.subtotal}> 
                     <p>Total</p>
-                    <p>$0</p>
+                    <p>$ {total}</p>
                 </div>
             </div>
         )}

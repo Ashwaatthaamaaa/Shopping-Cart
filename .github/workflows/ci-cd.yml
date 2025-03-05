@@ -68,7 +68,7 @@ jobs:
 
       - name: Build and push Docker image
         env:
-          IMAGE_NAME: ghcr.io/${{ github.repository }}/shopping-cart:latest
+          IMAGE_NAME: ghcr.io/ashwaatthaamaaa/shopping-cart:latest
         run: |
           docker build -t $IMAGE_NAME .
           docker push $IMAGE_NAME

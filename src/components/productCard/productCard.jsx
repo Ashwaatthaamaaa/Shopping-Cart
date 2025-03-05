@@ -34,7 +34,7 @@ export default function ProductCard({id,product,quantity,updateQuantity,updateWi
 
     return(
         <div className={styles.card}>
-            <div className={styles.wish} onClick={handleWishlistClick}>{isInWishlist ? <IoMdHeart/> : <IoMdHeartEmpty/>}</div>
+            <div className={styles.wish} onClick={handleWishlistClick} data-testid="wishlist-button">{isInWishlist ? <IoMdHeart/> : <IoMdHeartEmpty/>}</div>
             <div className={styles.product}><img src={product.thumbnail} alt={product.title}/></div>
             <div className={styles.bottom}>
                 <div className={styles.info}>

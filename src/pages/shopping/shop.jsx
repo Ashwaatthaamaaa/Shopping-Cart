@@ -5,8 +5,7 @@ import styles from "./shop.module.css";
 export default function Shop({products,loading,error,quantities,updateQuantity,updateWishlist,removeFromWishlist,wishlist}) {
 
 
-    if(loading) return <div className={styles.loader}></div>
-
+  if(loading) return <div className={styles.loader} data-testid="loader"></div>
     if(error) return <h2>Error when fetching: {error.message}</h2>
     
   return (

@@ -1,41 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Rubik+Vinyl&display=swap');
-
-.navbar{
+.navbar {
     display: flex;
-    flex-direction: row;    
     justify-content: space-between;
-    background-color: rgb(243, 231, 231);
+    align-items: center;
     padding: 1.2rem 3rem;
-}
-
-.one{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .one {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 1.8rem;
-
-}
-
-.link{
+    gap: 2.5rem;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .link {
     display: flex;
-    flex-direction: row;
-    font-size: 1.5rem;
-    gap: 0.8rem;
-
-}
-
-
-.one > div:first-child{
-    font-family: "Rubik Vinyl", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2rem;
-}
-
-.icon{
-    font-size: 2rem;
+    gap: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .link a {
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+  }
+  
+  .link a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+  
+  .link a:hover::after {
+    width: 100%;
+  }
+  
+  .icon {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: .8rem;
-}   
+    gap: 1.2rem;
+  }
+  
+  .iconWrapper {
+    position: relative;
+  }
+  
+  .iconLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+  }
+  
+  .iconLink:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .navIcon {
+    font-size: 1.3rem;
+  }
+  
+  .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    height: 1.2rem;
+    min-width: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0 0.2rem;
+  }
+  
+  .themeToggle {
+    margin-right: 0.5rem;
+  }
+  
+  /* Dark mode adjustments */
+  :global(.chakra-ui-dark).badge {
+    background-color: #f7f7f7;
+    color: #1a1a1a;
+  }
+  
+  :global(.chakra-ui-dark).iconLink:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem 1.5rem;
+    }
+  
+    .one {
+      gap: 1.5rem;
+    }
+  
+    .logo {
+      font-size: 1.5rem;
+    }
+  
+    .link {
+      font-size: 0.9rem;
+      gap: 1rem;
+    }
+  
+    .icon {
+      gap: 0.8rem;
+    }
+  }
+  
+  

@@ -1,38 +1,87 @@
-
-
-
-
-.card{
-    width: 22rem;
-    margin: 2.5rem;
-    border: .1rem solid #ccc;
-    border-radius: .3rem;
-    padding: .3rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
+.card {
+    width: 280px;
+    border-radius: 8px;
+    border-width: 1px;
+    overflow: hidden;
     position: relative;
-
-
-}
-
-.wish,.cart{
-    font-size: 1.8rem;
-    margin-left: auto;
-}
-
-#brand{
-    color: rgb(80 73 73 / 68%);
-}
-
-.cart{
-    margin-left: auto;
-    margin-top: auto;
-    width: fit-content;
-}
-
-.bottom{
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .wish {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.5rem;
+    z-index: 10;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
-
-}
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .wish:hover {
+    transform: scale(1.1);
+  }
+  
+  .product {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+  }
+  
+  .product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .product img {
+    transform: scale(1.05);
+  }
+  
+  .bottom {
+    padding: 16px;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cart {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Dark mode adjustments */
+  :global(.chakra-ui-dark).product {
+    background-color: #2a2a2a;
+  }
+  
+  :global(.chakra-ui-dark).wish {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+  
+  

@@ -1,36 +1,39 @@
-.total{
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  
+  .cards {
     display: flex;
     flex-direction: column;
-    border: .1rem solid #ccc;
-    border-radius: .3rem;
-    padding: .3rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 1.5rem;
-    font-family: "DM Serif Text", serif;
-    font-weight: 500;
-    font-style: normal;
-    gap: 1rem;
-    min-width: 30rem;
-    max-height: 15rem;
-}
-
-.subtotal{
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-.total h2{
-    font-size: 1.5rem;
-}
-
-.container{
-    display: flex;
-    flex-direction: row;
+  }
+  
+  .summary {
     width: 100%;
-}
-
-.cards{
-    display: flex;
-    flex-direction: column;
-}
+    max-width: 360px;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 24px;
+    height: fit-content;
+  }
+  
+  .summaryRow {
+    font-size: 1rem;
+  }
+  
+  .empty {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    padding: 48px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .summary {
+      max-width: 100%;
+      margin-top: 24px;
+    }
+  }
+  
+  
